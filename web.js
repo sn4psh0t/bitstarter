@@ -3,7 +3,7 @@ var fs = require('fs');
 
 var app = express.createServer(express.logger());
 
-var readFile = fs.readFile('index.html');
+var readFile = fs.readFileSync('index.html', 'utf-8');
 
 app.get('/', function(request, response) {
   response.send(readFile);
